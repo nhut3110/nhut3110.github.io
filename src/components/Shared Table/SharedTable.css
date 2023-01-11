@@ -1,0 +1,47 @@
+.modal__sharedTable {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__sharedTable-box {
+  width: 33%;
+  height: auto;
+  background-color: #fff;
+  padding: 20px 15px;
+  border: 10px;
+  border-radius: 10px;
+}
+
+.modal__sharedTable-header {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.btn__close {
+  margin-top: -20px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.SharedUser__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: #333 1px solid;
+  padding: 5px;
+  border-radius: 8px;
+  margin: 10px 0px;
+}
+
+.SharedUser__container .SharedUser__operation {
+  width: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

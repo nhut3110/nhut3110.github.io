@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.68ab8a7d.css",
+    "main.js": "/static/js/main.27ad4336.js",
+    "static/js/787.4e84918e.chunk.js": "/static/js/787.4e84918e.chunk.js",
+    "static/media/art.jpg": "/static/media/art.ef5aa18f7c875ea2d7a4.jpg",
+    "static/media/illustration-statue-david-head-art-260nw-2126906357.jpg": "/static/media/illustration-statue-david-head-art-260nw-2126906357.0dd6edbb59bdbb9cc1bc.jpg",
+    "static/media/landscape-svgrepo-com.svg": "/static/media/landscape-svgrepo-com.59f61faf57067c921a985a4b6c549af8.svg",
+    "static/media/woman.svg": "/static/media/woman.080ccd98d5354c0e547a98cf85ecdb40.svg",
+    "static/media/man.svg": "/static/media/man.b94c7537f6e94db14ac21499a17d4659.svg",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/people-svgrepo-com.svg": "/static/media/people-svgrepo-com.c6db663d334304488574a65cac04f809.svg",
+    "static/media/money-svgrepo-com.svg": "/static/media/money-svgrepo-com.33a9a1d65b1855d0db756d9bc0196a27.svg",
+    "static/media/person-svgrepo-com.svg": "/static/media/person-svgrepo-com.a4b3015f5fedbb5903b786a3b7576033.svg",
+    "static/media/simle-face-svgrepo-com.svg": "/static/media/simle-face-svgrepo-com.9be31f7a148c15244aadd8ad0182f7f6.svg",
+    "static/media/tick-box-svgrepo-com.svg": "/static/media/tick-box-svgrepo-com.3a79a649b198ced0a9e41eb41eb3ef1d.svg",
+    "static/media/edit.svg": "/static/media/edit.38c0d608b1027bcb8417ab59a15a1fdc.svg",
+    "static/media/editOpts.svg": "/static/media/editOpts.c47f770a2b3073301cc46c9686dbbf8d.svg",
+    "static/media/add-svgrepo-com-black.svg": "/static/media/add-svgrepo-com-black.b7b86d9d9b01b6fbbd3af7e489f88f31.svg",
+    "index.html": "/index.html",
+    "static/media/search.svg": "/static/media/search.fa5482656050176b3ffeb7a48e49102e.svg",
+    "static/media/trash.svg": "/static/media/trash.14652c9d11feff4120e61115376c5f89.svg",
+    "static/media/clone.svg": "/static/media/clone.8a49890d37914966c30d3338df0e88ed.svg",
+    "static/media/upMove.svg": "/static/media/upMove.897b07ee225cddbadaf74ab6635f8386.svg",
+    "static/media/verticalDots.svg": "/static/media/verticalDots.802fc44bb86d7d2df0ddf5f9d5d4ecba.svg",
+    "main.68ab8a7d.css.map": "/static/css/main.68ab8a7d.css.map",
+    "main.27ad4336.js.map": "/static/js/main.27ad4336.js.map",
+    "787.4e84918e.chunk.js.map": "/static/js/787.4e84918e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.68ab8a7d.css",
+    "static/js/main.27ad4336.js"
+  ]
+}

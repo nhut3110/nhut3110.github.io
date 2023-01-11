@@ -1,0 +1,23 @@
+.ListOpts__box {
+  position: absolute;
+  width: 175px;
+  height: auto;
+  /* margin-left: 300px; */
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  right: 20px;
+}
+
+.ListOpts__func {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.ListOpts__func p {
+  margin-left: 10px;
+}
+.ListOpts__func:hover {
+  background: rgba(128, 128, 128, 0.5);
+}

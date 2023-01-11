@@ -1,0 +1,39 @@
+.task__container {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 50px;
+  margin: 10px auto;
+  padding: 5px 10px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.task__container-name {
+  display: flex;
+  flex-direction: row;
+}
+
+.task__container-name p {
+  margin-left: 10px;
+}
+
+.task__container img {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+#task__checkbox {
+  width: 20px;
+  aspect-ratio: 1/1;
+  accent-color: #333;
+}
+
+#task__name {
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

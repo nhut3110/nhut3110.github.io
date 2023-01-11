@@ -1,0 +1,77 @@
+.modal__createList {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal__createList-box {
+  width: 33%;
+  height: auto;
+  background-color: #fff;
+  padding: 20px 15px;
+  border: 10px;
+  border-radius: 10px;
+}
+
+.modal__createList-header {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.btn__close {
+  margin-top: -20px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.List__name {
+  padding: 5px 10px;
+  margin: 5px 0;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.List__permission {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.List__permission .List__info {
+  font-size: 1.1rem;
+}
+
+.List__permission .List__seclect {
+  width: 40%;
+  margin: 3px;
+}
+
+.List__error {
+  font-size: 0.8rem;
+  padding-left: 10px;
+  font-style: italic;
+  color: red;
+}
+
+.btn__create {
+  padding: 5px 10px;
+  margin-top: 10px;
+  width: 25%;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1 solid rgba(0, 0, 0);
+  float: right;
+  background-color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.btn__create:hover {
+  background-color: black;
+  color: white;
+}
