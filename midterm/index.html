@@ -11,10 +11,48 @@
       canvas {
         display: block;
       }
+
+      #soundToggleButton {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        outline: none;
+      }
+
+      #soundToggleButton:hover {
+        background-color: #0056b3;
+      }
+
+      #loadingScreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     </style>
   </head>
 
   <body>
+    <div id="loadingScreen">
+      <div id="loading">Loading...</div>
+    </div>
+
+    <button
+      id="soundToggleButton"
+      style="position: fixed; top: 20px; right: 20px; z-index: 1000"
+    >
+      Toggle Sound
+    </button>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js"
       integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg=="

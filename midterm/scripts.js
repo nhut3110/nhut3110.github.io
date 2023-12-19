@@ -5,13 +5,51 @@ import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples/
 // Renderer
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
+
 document.body.appendChild(renderer.domElement);
+
+const manager = new THREE.LoadingManager();
+manager.onStart = function (url, itemsLoaded, itemsTotal) {
+  document.getElementById("soundToggleButton").style.visibility = "hidden";
+  console.log(
+    "Started loading file: " +
+      url +
+      ".\nLoaded " +
+      itemsLoaded +
+      " of " +
+      itemsTotal +
+      " files."
+  );
+};
+
+manager.onLoad = function () {
+  document.getElementById("loadingScreen").style.display = "none";
+  document.getElementById("soundToggleButton").style.visibility = "visible";
+  console.log("All assets loaded.");
+  sound.play();
+};
+
+manager.onProgress = function (url, itemsLoaded, itemsTotal) {
+  console.log(
+    "Loading file: " +
+      url +
+      ".\nLoaded " +
+      itemsLoaded +
+      " of " +
+      itemsTotal +
+      " files."
+  );
+};
+
+manager.onError = function (url) {
+  console.log("There was an error loading " + url);
+};
 
 // Scene
 const scene = new THREE.Scene();
 
 // Create GLTF loader
-const gltfLoader = new GLTFLoader();
+const gltfLoader = new GLTFLoader(manager);
 
 // Camera
 const camera = new THREE.PerspectiveCamera(
@@ -32,6 +70,21 @@ const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6); // Brighter 
 directionalLight.position.set(0, 1, 0.5);
 scene.add(directionalLight);
 
+// Create an AudioListener and add it to the camera
+const listener = new THREE.AudioListener();
+camera.add(listener);
+
+// Create a global audio source
+const sound = new THREE.Audio(listener);
+
+// Load a sound and set it as the Audio object's buffer
+const audioLoader = new THREE.AudioLoader();
+audioLoader.load("./sound/christmas.ogg", function (buffer) {
+  sound.setBuffer(buffer);
+  sound.setLoop(true);
+  sound.setVolume(0.5);
+});
+
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true; // Optional, but this gives a smoother control feeling
 controls.dampingFactor = 0.1;
@@ -41,7 +94,7 @@ controls.minPolarAngle = 0; // 0 radians (0 degrees) - prevent moving below the 
 controls.maxPolarAngle = Math.PI / 2 - 0.1; // Slightly less than 90 degrees - prevent moving too far upwards
 
 // Texture loader
-const textureLoader = new THREE.TextureLoader();
+const textureLoader = new THREE.TextureLoader(manager);
 
 // Load snow textures
 const snowDiffuseTexture = textureLoader.load("./textures/snow_diff.jpg");
@@ -85,16 +138,15 @@ const skyboxMaterials = [
   new THREE.MeshBasicMaterial({ map: skyboxTextureBk, side: THREE.BackSide }),
 ];
 
-// [Box Geometry, Ambient and Directional Light code remains the same]
-
 const skyboxMesh = new THREE.Mesh(
   new THREE.BoxGeometry(100, 100, 100),
   skyboxMaterials
 );
-skyboxMesh.name = "skybox"; // Naming the skybox mesh
+skyboxMesh.name = "skybox";
 skyboxMesh.position.y = 10;
 scene.add(skyboxMesh);
 
+// Load wood textures
 const woodDiffuseTexture = textureLoader.load("./wood/diffuse.jpg");
 const woodBumpTexture = textureLoader.load("./wood/bump.jpg");
 const woodNormalTexture = textureLoader.load("./wood/normal.jpg");
@@ -159,7 +211,7 @@ function loadStar() {
     starModel.position.set(0, posY + 0.3, 0);
 
     // Optionally, create a point light inside the star if the model doesn't have one
-    starLight = new THREE.PointLight(0xffff00, 1.5, 10); // Increased intensity
+    starLight = new THREE.PointLight(0xffff00, 1.5, 10);
     starModel.add(starLight);
 
     scene.add(starModel);
@@ -418,7 +470,6 @@ function loadChristmasBall() {
 // Define the positions of the Christmas gifts near each child
 const giftPositions = [
   { x: -2, y: -0.7, z: -1 }, // Adjust the positions as needed
-  // Add positions for other children's gifts here
 ];
 
 // Load Christmas gifts and add lights for each child
@@ -448,8 +499,8 @@ loadChristmasGifts();
 // Call the functions to load Christmas ball and Christmas gift
 loadChristmasBall();
 
-// [Rest of the animate function]
 function animate() {
+  // Check if all assets are loaded
   requestAnimationFrame(animate);
 
   // Update controls
@@ -470,5 +521,19 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-// Start animation loop
 animate();
+
+const soundButton = document.getElementById("soundToggleButton");
+let isSoundPlaying = true;
+
+soundButton.addEventListener("click", function () {
+  if (isSoundPlaying) {
+    sound.pause();
+    isSoundPlaying = false;
+    soundButton.textContent = "Turn Sound On";
+  } else {
+    sound.play();
+    isSoundPlaying = true;
+    soundButton.textContent = "Turn Sound Off";
+  }
+});
