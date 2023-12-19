@@ -1,0 +1,11 @@
+Model Information:
+* title:	Rudolph Christmas Decoration
+* source:	https://sketchfab.com/3d-models/rudolph-christmas-decoration-e08116dc3380464ea465dd87cbad7981
+* author:	i.materialise (https://sketchfab.com/imaterialise)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Rudolph Christmas Decoration" (https://sketchfab.com/3d-models/rudolph-christmas-decoration-e08116dc3380464ea465dd87cbad7981) by i.materialise (https://sketchfab.com/imaterialise) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
